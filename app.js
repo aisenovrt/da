@@ -1,4 +1,4 @@
-// Инициализация Web3.js с использованием провайдера MetaMask или Infura
+
 let web3;
 
 if (typeof window.ethereum !== 'undefined') {
@@ -7,7 +7,7 @@ if (typeof window.ethereum !== 'undefined') {
     alert("Web3 provider not found. Please install MetaMask or use a compatible browser.");
 }
 
-// Адрес вашего смарт-контракта и ABI
+
 const contractAddress = '0x99d24e519b75E403Fd816575624C503B0A9e78d9'; // Замените на адрес вашего контракта
 const contractABI = [
     {
@@ -58,10 +58,10 @@ const contractABI = [
         "stateMutability": "view",
         "type": "function"
     }
-    // Добавьте другие функции вашего контракта с аналогичной структурой
+    
 ];
 
-// Создание объекта контракта
+
 const contract = new web3.eth.Contract(contractABI, contractAddress);
 
 // Функция для отправки выбранного хода на смарт-контракт
@@ -82,7 +82,7 @@ async function playMove() {
     }
 }
 
-// Функция для отображения истории игр
+
 async function showGameHistory() {
     try {
         const history = await contract.methods.getGameHistory().call();
